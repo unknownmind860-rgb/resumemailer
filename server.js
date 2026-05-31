@@ -28,10 +28,18 @@ app.use(helmet({
 app.use(morgan('dev'));
 
 // CORS Configuration
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+  ...(process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : []),
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 app.use(cors({
-  origin: '*', // In production, replace with specific frontend domain
+  origin: allowedOrigins.length > 0 ? allowedOrigins : '*',
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 // Body Parsers
