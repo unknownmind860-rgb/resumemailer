@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+jspm_packages/
+web_modules/
+
+# Private Environmental Configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Production Build Directories
+dist/
+build/
+out/
+.next/
+
+# IDE / Editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary Upload Folder
+backend/uploads/*
+!backend/uploads/.gitkeep

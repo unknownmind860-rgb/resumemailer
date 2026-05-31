@@ -1,0 +1,9 @@
+# Local backend dependencies
+node_modules/
+
+# Private environmental configurations
+.env
+
+# Temporary upload logs
+uploads/*
+!uploads/.gitkeep
